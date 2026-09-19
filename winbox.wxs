@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Wix xmlns="http://wixtoolset.org/schemas/v4/wxs">
-  <Package Name="WinBox 4.4" Manufacturer="MikroTik" Version="4.4.0"
+  <Package Name="WinBox 4" Manufacturer="MikroTik" Version="4.4"
            Language="1045" Scope="perMachine"
            UpgradeCode="a0e79f22-731e-494a-a520-756b41bfe99f">
     <MajorUpgrade DowngradeErrorMessage="Nowsza wersja jest już zainstalowana." />
