@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Wix xmlns="http://wixtoolset.org/schemas/v4/wxs">
+  <Package Name="WinBox 4.4" Manufacturer="MikroTik" Version="4.4.0"
+           Language="1045" Scope="perMachine"
+           UpgradeCode="a0e79f22-731e-494a-a520-756b41bfe99f">
+    <MajorUpgrade DowngradeErrorMessage="Nowsza wersja jest już zainstalowana." />
+    <MediaTemplate EmbedCab="yes" />
+
+    <StandardDirectory Id="ProgramFiles64Folder">
+      <Directory Id="INSTALLFOLDER" Name="WinBox">
+        <Component Id="cmpWinbox" Bitness="always64">
+          <File Id="filWinbox" Source="winbox.exe" KeyPath="yes">
+            <Shortcut Id="scDesktop" Directory="DesktopFolder"
+                      Name="WinBox" WorkingDirectory="INSTALLFOLDER"
+                      Advertise="no" />
+            <Shortcut Id="scStartMenu" Directory="ProgramMenuFolder"
+                      Name="WinBox" WorkingDirectory="INSTALLFOLDER"
+                      Advertise="no" />
+          </File>
+          <RemoveFolder Id="rmInstallFolder" Directory="INSTALLFOLDER" On="uninstall" />
+        </Component>
+      </Directory>
+    </StandardDirectory>
+
+    <Feature Id="Main">
+      <ComponentRef Id="cmpWinbox" />
+    </Feature>
+  </Package>
+</Wix>
